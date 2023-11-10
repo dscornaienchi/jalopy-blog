@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/public/assets/css/">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                </li>
+                {{#if user}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout" id="logout-button">Logout</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </nav>
+        <a href="/" class="website-title">Jalopy Blog</a>
+    </header>
+    {{{body}}}
+</body>
+</html>
