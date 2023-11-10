@@ -1,0 +1,23 @@
+DROP DATABASE IF EXISTS jalopy_db;
+CREATE DATABASE jalopy_db;
+
+USE jalopy_db;
+
+CREATE TABLE cars (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    year INT NOT NULL,
+    make VARCHAR(30) NOT NULL,
+    model VARCHAR(30) NOT NULL,
+);
+
+CREATE TABLE reviews (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    car_id INT,
+    review TEXT NOT NULL,
+    FOREIGN KEY (car_id)
+    ON DELETE SET NULL
+);
+
+CREATE TABLE users (
+
+)
