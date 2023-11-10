@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="/public/assets/css/">
 </head>
+
 <body>
     <header>
         <nav>
@@ -14,13 +16,13 @@
                     <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
                 {{#if user}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout" id="logout-button">Logout</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout" id="logout-button">Logout</a>
+                </li>
                 {{else}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
                 {{/if}}
             </ul>
         </nav>
@@ -28,4 +30,5 @@
     </header>
     {{{body}}}
 </body>
+
 </html>
