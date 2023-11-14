@@ -1,13 +1,20 @@
 const router = require('express').Router();
-const { getHomePage, searchCars, viewCarDetails } = require('../models'); // import all of the models (might need to adjust this)
+const { User, Post, Comment } = require('../models');
 
-// Render the homepage with the search form 
-router.get('/', getHomePage);
-
-// Render the search results after user enters criteria
-router.post('/search', searchCars);
-
-// Render the car details page after the user clicks on a car
-router.get('/car/:id', viewCarDetails);
-
+// Render the homepage with the search results after user makes selection
+router.get('/', async (req, res) => {
+    try {
+        const postData = await Post.findAll({
+        include: [{ model: User, attributes: ['username'] }, { model: Comment }],
+        });
+    
+        const posts = postData.map((post) => post.get({ plain: true }));
+        console.log("POSTS", posts);
+        res.render('homepage', { posts });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+  
 module.exports = router;
