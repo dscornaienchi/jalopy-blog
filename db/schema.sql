@@ -4,9 +4,9 @@ CREATE DATABASE jalopy_db;
 USE jalopy_db;
 
 CREATE TABLE users (
-    id INT NOT NULL,
-    username VARCHAR(40),
-    password VARCHAR(40)
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(40) NOT NULL,
+    password VARCHAR(40) NOT NULL
 );
 
 CREATE TABLE cars (
@@ -14,12 +14,16 @@ CREATE TABLE cars (
     year INT NOT NULL,
     make VARCHAR(30) NOT NULL,
     model VARCHAR(30) NOT NULL,
+    image_url VARCHAR(200)
 );
 
 CREATE TABLE reviews (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    car_id INT,
-    review TEXT NOT NULL,
-    ON DELETE SET NULL
+    title VARCHAR(30) NOT NULL,
+    body TEXT NOT NULL,
+    user_id INT FOREIGN KEY (user_id) REFERENCES users(id),
+    car_id INT FOREIGN KEY (car_id) REFERENCES cars(id)
+
+
 );
 
