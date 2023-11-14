@@ -1,10 +1,16 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 
-// Logout route
+// GET route for logging out
 router.get('/logout', (req, res) => {
-  // Add your logic for user logout
-  res.send('Logout Page');
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      // Redirect to the homepage after logging out
+      res.status(204).end();
+      res.redirect('/homepage');
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;

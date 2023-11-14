@@ -12,7 +12,7 @@ router.post('/login', async (req, res) => {
     });
 
     if (!userData) {
-      return res.redirect('/'); // Redirect back to the login page
+      return res.redirect('/login'); // Redirect back to the login page
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
@@ -21,14 +21,25 @@ router.post('/login', async (req, res) => {
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
-      return res.redirect('/'); // Redirect back to the login page
+      return res.redirect('/login'); // Redirect back to the login page
     }
 
-    req.session.user_id = userData.id;
-    req.session.username = userData.username;
-    req.session.logged_in = true;
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      console.log(
+        'File: user-routes.js ~ line 57 ~ req.session.save ~ req.session.cookie',
+        req.session.cookie
+      );
+      res
+        .status(200)
+        .json({ user: userData, message: 'You are now logged in!' });
+    });
 
-    res.redirect('/'); // Redirect to the homepage or any other desired page
+    // req.session.user_id = userData.id;
+    // req.session.username = userData.username;
+    // req.session.logged_in = true;
+
+    res.redirect('/homepage'); // Redirect to the homepage or any other desired page
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
