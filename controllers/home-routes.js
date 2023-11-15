@@ -16,5 +16,23 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// create a post route where the homepage displays the car results after user makes selection based on year, make, and model
+router.post('/search', async (req, res) => {
+    try {
+        const carData = await Car.findAll({
+            where: {
+                year: req.body.year,
+                make: req.body.make,
+                model: req.body.model,
+            },
+        });
+        const cars = carData.map((car) => car.get({ plain: true }));
+        res.render('home', { cars });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
   
 module.exports = router;
