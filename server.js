@@ -28,7 +28,6 @@ app.use(
 
 // Use the routes
 app.use(require('./controllers/home-routes'));
-app.use(require('./controllers/api/user-routes'));
 app.use(require('./controllers/api/post-routes'));
 app.use(require('./controllers/api/login-routes'));
 app.use(require('./controllers/api/logout-routes'));
