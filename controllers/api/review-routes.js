@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Review, Car } = require('.../models');
 
 // GET all reviews
-router.get('/', async (req, res) => {
+router.get('/review', async (req, res) => {
   try {
     const reviewData = await Review.findAll({
       include: [
