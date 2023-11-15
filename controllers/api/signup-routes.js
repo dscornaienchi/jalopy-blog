@@ -1,6 +1,7 @@
 // In signup-routes.js
 const router = require('express').Router();
-const { User } = require('../../models');
+const bcrypt = require('bcrypt');
+const { User } = require('../../models'); // Make sure to import your User model
 
 // GET route for rendering the signup form
 router.get('/signup', (req, res) => {
@@ -22,7 +23,7 @@ router.post('/signup', async (req, res) => {
       req.session.username = userData.username;
       req.session.logged_in = true;
 
-      return res.redirect('/'); // Redirect to the homepage or any other desired page});
+      return res.redirect('/'); // Redirect to the homepage or any other desired page
     });
   } catch (err) {
     console.log(err);
@@ -31,3 +32,5 @@ router.post('/signup', async (req, res) => {
 });
 
 module.exports = router;
+
+
