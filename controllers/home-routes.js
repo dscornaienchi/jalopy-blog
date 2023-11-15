@@ -1,16 +1,16 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../models');
+const { User, Car, Review } = require('../models');
 
 // Render the homepage with the search results after user makes selection
 router.get('/', async (req, res) => {
     try {
-        const postData = await Post.findAll({
-        include: [{ model: User, attributes: ['username'] }, { model: Comment }],
+        const postReview = await Review.findAll({
+        include: [{ model: User, attributes: ['username'] }, { model: Car, attributes: ['make', 'model', 'year'] }],
         });
     
-        const posts = postData.map((post) => post.get({ plain: true }));
-        console.log("POSTS", posts);
-        res.render('homepage', { posts });
+        const reviews = postReview.map((review) => review.get({ plain: true }));
+        console.log("REVIEWS", reviews);
+        res.render('home', { reviews });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

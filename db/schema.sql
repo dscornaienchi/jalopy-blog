@@ -20,10 +20,11 @@ CREATE TABLE cars (
 CREATE TABLE reviews (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
-    body TEXT NOT NULL,
-    user_id INT FOREIGN KEY (user_id) REFERENCES users(id),
-    car_id INT FOREIGN KEY (car_id) REFERENCES cars(id)
-
-
+    body VARCHAR(1000) NOT NULL,
+    user_id INT NOT NULL,
+    car_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (car_id) REFERENCES cars(id)
 );
+
 
