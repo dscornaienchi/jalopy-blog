@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Car } = require('../../models');
+const { User, Car, Review } = require('../../models');
 
 // Custom middleware to check if the user is logged in
 const withAuth = (req, res, next) => {
@@ -14,20 +14,19 @@ const withAuth = (req, res, next) => {
 // GET route for rendering the user's dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    // Fetch the user's posts along with associated data
-    const postData = await Post.findAll({
+    // Fetch the user's reviews along with associated data
+    const postReview = await Review.findAll({
       where: { user_id: req.session.user_id },
-      include: [{ model: User, attributes: ['username'] }, { model: Comment }],
+      include: [{ model: User, attributes: ['username'] }],
     });
 
     // Serialize the data
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const reviews = postReview.map((review) => review.get({ plain: true }));
 
     // Render the dashboard, passing the user's posts
-    console.log("DASHBOARDPOSTS", posts);
-    console.log("DASHBOARDUSER", req.session.user_id);
-    //const user = await User.findByPk()
-    res.render('dashboard', { posts, user: req.session.user_id });
+    console.log(reviews);
+    console.log(req.session.user_id);
+    res.render('dashboard', { reviews, user: req.session.user_id });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
