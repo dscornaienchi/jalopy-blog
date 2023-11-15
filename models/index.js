@@ -18,4 +18,4 @@ Review.belongsTo(Car, {
   foreignKey: 'review_id'
 });
 
-module.exports = { User, Car };
+module.exports = { User, Car, Review};
