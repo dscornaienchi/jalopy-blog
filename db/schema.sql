@@ -23,7 +23,5 @@ CREATE TABLE reviews (
     body TEXT NOT NULL,
     user_id INT FOREIGN KEY (user_id) REFERENCES users(id),
     car_id INT FOREIGN KEY (car_id) REFERENCES cars(id)
-
-
 );
 
