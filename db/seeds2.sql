@@ -3295,10 +3295,7 @@ VALUES  ('2000', 'Nissan', 'Frontier'),
 
 
 INSERT INTO users (username, password)
-VALUES  ('team2', 'team2rules');
+VALUES  ('project2team2', 'team2rules');
 
 INSERT INTO reviews (title, body, car_id, user_id)
 VALUES  ('Review1', 'this car sucks', 1, 1);
-
-INSERT INTO reviews (title, body, car_id, user_id)
-VALUES  ('Review1', '240SX', 1, 1);
