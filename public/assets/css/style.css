@@ -1,4 +1,4 @@
-body,
+/* body,
 h1,
 h2,
 h3,
@@ -6,48 +6,80 @@ p {
     margin: 0;
     padding: 0;
     background-color: #D9D9D9;
-}
+} */
 
 header {
-    background-color: #EC6B6B;
+    background-color: azure;
     color: #fff;
     padding: 10px;
-    display: flex;
+    display: flex; 
+    justify-content: space-between;
     align-items: center;
+    /* align-items: center; */
 }
 
-header .website-title {
-    color: #fff;
+.website-title {
+    color: #f1e9d2;
     text-decoration: none;
-    font-size: 36px;
+    text-shadow: 2px 2px 4px #a67b5b;
+    font-size: 45px;
     font-weight: bold;
-    margin-right: auto;
-    padding-left: 20px;
+    font-family: 'Sniglet', garamond, sans-serif;
+    /* margin-right: auto;
+    padding-left: 20px; */
     /* Adjust as needed */
+} 
+
+.nav-bar {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Montserrat', garamond, sans-serif;
+    align-items: center;
+    /* display: flex; */
+    /* flex-direction: row; */
 }
 
-header nav ul {
+#list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style-type: none;
+}
+
+#list li:not(:last-child)::after {
+    content: " | ";
+    white-space: pre-wrap;
+  }
+
+.nav-item {
+    padding: 10px;
+    color: #000; 
+}
+
+
+/* header nav ul {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
-    margin-left: auto;
-}
+    margin-right: auto;
+} */
 
-header nav ul li {
-    margin-left: 20px;
-}
+/* header nav ul li {
+    margin-right: 20px;
+} */
 
-header nav ul li:first-child {
-    margin-left: 0;
-}
+/* header nav ul li:first-child {
+    margin-right: auto;
+} */
 
-header nav ul li a {
+/* header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-}
+} */
 
-.container {
+.container { 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,28 +89,30 @@ header nav ul li a {
     height: 100vh;
     padding-top: 20px;
     /* Space from the top */
+    background-color: #f1e9d2;
 }
 
+
 /* Additional styles for form and links */
-#signup-form {
+/* #signup-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     /* Align form items to the top */
-    margin-top: 20px;
-}
+    /* margin-top: 20px;
+} */
 
-#signup-form .form-group {
+/* #signup-form .form-group {
     margin-bottom: 10px;
-}
+} */
 
-#signup-form button {
+/* #signup-form button {
     align-self: flex-start;
     /* Align button to the left */
-}
+/* } */ 
 
-#signup-form label,
+/* #signup-form label,
 #signup-form input {
     width: 200px;
     /* Adjust as needed */
-}
+/* } */
