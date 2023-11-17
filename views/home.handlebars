@@ -1,6 +1,6 @@
 <!-- Search Section -->
 <div class="container">
-    <form action="/search" method="POST">
+    <form id="searchForm">
         <label for="year">Year:</label>
         <input type="text" id="year" name="year">
 
@@ -15,12 +15,21 @@
 </div>
 
 <!-- Display Search Results -->
-<div class="container">
-    {{#each car}}
-        <div class="car-card">
-            <h2>{{year}} {{make}} {{model}}</h2>
-            <!-- Add other car details as needed -->
-        </div>
-    {{/each}}
+<div class="container" id="searchResults">
+    {{#if cars.length}}
+        {{#each cars}}
+            <div class="car-card">
+                <h2>{{year}} {{make}} {{model}}</h2>
+                <!-- Add other car details as needed -->
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No search results found.</p>
+    {{/if}}
 </div>
+
+
+<!-- Include the JavaScript file -->
+<script src="/assets/js/search-results.js"></script>
+
 

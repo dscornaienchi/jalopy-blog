@@ -1,34 +1,30 @@
 const router = require('express').Router();
 const { User, Car, Review } = require('../models');
 
-// Render the homepage with the search results after user makes selection
+// Render the homepage
 router.get('/', async (req, res) => {
     try {
-        const postReview = await Review.findAll({
-        include: [{ model: User, attributes: ['username'] }, { model: Car, attributes: ['make', 'model', 'year'] }],
-        });
-    
-        const reviews = postReview.map((review) => review.get({ plain: true }));
-        console.log("REVIEWS", reviews);
-        res.render('home', { reviews });
+        res.render('home');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
 
-// create a post route where the homepage displays the car results after user makes selection based on year, make, and model
-router.post('/search', async (req, res) => {
+// homepage displays the car results after the user makes a selection based on year, make, and model
+router.get('/search', async (req, res) => {
+    console.log("REQ", req.query);
     try {
         const carData = await Car.findAll({
             where: {
-                year: req.body.year,
-                make: req.body.make,
-                model: req.body.model,
+                year: req.query.year,
+                make: req.query.make,
+                model: req.query.model,
             },
         });
         const cars = carData.map((car) => car.get({ plain: true }));
-        res.render('home', { cars });
+        console.log("CARS", cars);
+        res.json(cars);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
