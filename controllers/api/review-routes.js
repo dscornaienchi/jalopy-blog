@@ -1,23 +1,15 @@
 const router = require('express').Router();
-const { Review, Car } = require('.../models');
+const { Review, Car, User } = require('../../models');
 
 // GET all reviews
 router.get('/review', async (req, res) => {
   try {
-    const reviewData = await Review.findAll({
-      include: [
-        {
-          model: Review,
-          attributes: ['title', 'body'],
-        },
-      ],
-    });
-
+    const reviewData = await Review.findAll();
+    console.log(reviewData);
     const reviews = reviewData.map((review) =>
       review.get({ plain: true })
     );
-
-    res.render('reviews', {
+    res.render('all-reviews', {
       reviews,
       loggedIn: req.session.loggedIn,
     });
@@ -56,19 +48,22 @@ router.get('/review/:id', async (req, res) => {
 //Get All reviews for One CAR
 router.get('/car/:id', async (req, res) => {
     try {
+      const carData = await Car.findByPk(req.params.id);
+      const car = carData.get({ plain: true });
+
       const reviewData = await Review.findAll({
-        include: { model: Car },
-        where: { car_id: req.body.id }
+        include: [{ model: Car }, { model: User }],
+        where: { car_id: req.params.id }
       });
   
       const reviews = reviewData.map((review) =>
         review.get({ plain: true })
       );
-  
       res.render('reviews', {
         reviews,
-        loggedIn: req.session.loggedIn,
-      });
+        car,
+        logged_in: req.session.logged_in});
+
     } catch (err) {
       console.log(err);
       res.status(500).json(err);

@@ -1,12 +1,12 @@
 /* body,
 h1,
-h2,
-h3,
 p {
     margin: 0;
     padding: 0;
     background-color: #D9D9D9;
 } */
+=======
+}
 
 header {
     background-color: azure;
@@ -18,7 +18,13 @@ header {
     /* align-items: center; */
 }
 
-.website-title {
+h2,
+h3 {
+    align-content: center;
+    text-align: center;
+}
+
+header .website-title {
     color: #f1e9d2;
     text-decoration: none;
     text-shadow: 2px 2px 4px #a67b5b;
@@ -83,9 +89,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center content horizontally */
-    justify-content: flex-start;
-    /* Align content to the top */
+    justify-content: center; /* Center content vertically */
     height: 100vh;
     padding-top: 20px;
     /* Space from the top */
@@ -95,6 +99,37 @@ header {
 
 /* Additional styles for form and links */
 /* #signup-form {
+=======
+    background-image: url('/public/assets/images/herbie.jpg');
+    /* Set background properties */
+/*     background-size: cover;
+    background-position: fill; */
+    /* Position the background image */
+
+
+.container img {
+    width: 50%; /* Make the image width 100% of the container */
+    height: 50%; /* Make the image height 100% of the container */
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form items horizontally */
+    margin-top: 20px; /* Add margin between the form and the "Login" title */
+}
+
+#login-form .form-group {
+    margin-bottom: 20px; /* Increase margin between input boxes */
+}
+
+#login-form button {
+    margin-top: 20px; /* Add margin between the button and input boxes */
+}
+
+/* Adjust the alignment of the form elements */
+#signup-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -116,3 +151,28 @@ header {
     width: 200px;
     /* Adjust as needed */
 /* } */
+    margin-top: 10px; /* Add a margin for separation */
+}
+
+/* Ensure images and other elements in review-container align to the top */
+.review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center content horizontally */
+    justify-content: flex-start;
+    /* Align content to the top */
+    padding-top: 20px;
+    /* Space from the top */
+}
+
+/* Add max-width to the image to prevent overflow */
+.review-img {
+    max-width: 100%; /* Adjust as needed */
+    height: auto;
+}
+
+.review-post {
+    width: 400px;
+    height: auto;
+}
