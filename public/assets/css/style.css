@@ -1,7 +1,5 @@
 body,
 h1,
-h2,
-h3,
 p {
     margin: 0;
     padding: 0;
@@ -13,6 +11,12 @@ header {
     padding: 10px;
     display: flex;
     align-items: center;
+}
+
+h2,
+h3 {
+    align-content: center;
+    text-align: center;
 }
 
 header .website-title {

@@ -17,7 +17,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     // Fetch the user's reviews along with associated data
     const postReview = await Review.findAll({
       where: { user_id: req.session.user_id },
-      include: [{ model: User, attributes: ['username'] }],
+      include: [{ model: User, attributes: ['username'] }, { model: Car, attributes: ['year', 'make', 'model'] }],
     });
 
     // Serialize the data
