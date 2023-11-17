@@ -121,3 +121,8 @@ header nav ul li a {
     max-width: 100%; /* Adjust as needed */
     height: auto;
 }
+
+.review-post {
+    width: 400px;
+    height: auto;
+}
