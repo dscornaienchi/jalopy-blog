@@ -1,11 +1,8 @@
 body,
 h1,
-h2,
-h3,
 p {
     margin: 0;
     padding: 0;
-    background-color: #D9D9D9;
 }
 
 header {
@@ -14,6 +11,12 @@ header {
     padding: 10px;
     display: flex;
     align-items: center;
+}
+
+h2,
+h3 {
+    align-content: center;
+    text-align: center;
 }
 
 header .website-title {
@@ -51,15 +54,38 @@ header nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center content horizontally */
-    justify-content: flex-start;
-    /* Align content to the top */
+    justify-content: center; /* Center content vertically */
     height: 100vh;
     padding-top: 20px;
-    /* Space from the top */
+    background-image: url('/public/assets/images/herbie.jpg');
+    /* Set background properties */
+    background-size: cover;
+    background-position: fill;
+    /* Position the background image */
 }
 
-/* Additional styles for form and links */
+.container img {
+    width: 50%; /* Make the image width 100% of the container */
+    height: 50%; /* Make the image height 100% of the container */
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form items horizontally */
+    margin-top: 20px; /* Add margin between the form and the "Login" title */
+}
+
+#login-form .form-group {
+    margin-bottom: 20px; /* Increase margin between input boxes */
+}
+
+#login-form button {
+    margin-top: 20px; /* Add margin between the button and input boxes */
+}
+
+/* Adjust the alignment of the form elements */
 #signup-form {
     display: flex;
     flex-direction: column;
@@ -75,14 +101,10 @@ header nav ul li a {
 #signup-form button {
     align-self: flex-start;
     /* Align button to the left */
+    margin-top: 10px; /* Add a margin for separation */
 }
 
-#signup-form label,
-#signup-form input {
-    width: 200px;
-    /* Adjust as needed */
-}
-
+/* Ensure images and other elements in review-container align to the top */
 .review-container {
     display: flex;
     flex-direction: column;
@@ -93,8 +115,10 @@ header nav ul li a {
     padding-top: 20px;
     /* Space from the top */
 }
+
+/* Add max-width to the image to prevent overflow */
 .review-img {
-    width: 400px;
+    max-width: 100%; /* Adjust as needed */
     height: auto;
 }
 
