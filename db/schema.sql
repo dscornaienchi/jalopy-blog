@@ -6,7 +6,7 @@ USE jalopy_db;
 CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(40) NOT NULL,
-    password VARCHAR(40) NOT NULL
+    password VARCHAR(1000) NOT NULL
 );
 
 CREATE TABLE cars (
