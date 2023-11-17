@@ -1,7 +1,5 @@
 body,
 h1,
-h2,
-h3,
 p {
     margin: 0;
     padding: 0;
@@ -14,6 +12,12 @@ header {
     padding: 10px;
     display: flex;
     align-items: center;
+}
+
+h2,
+h3 {
+    align-content: center;
+    text-align: center;
 }
 
 header .website-title {
@@ -101,3 +105,21 @@ header nav ul li a {
 .review-post {
 
 }
+
+/* Add your styles as needed */
+.review-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .review-card h3 {
+    color: #333;
+  }
+  
+  .review-card p {
+    margin-bottom: 5px;
+  }
+  
+  /* Add more styles as needed */
+  
