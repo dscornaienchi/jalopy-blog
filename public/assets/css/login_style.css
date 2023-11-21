@@ -8,9 +8,9 @@ button {
     align-items: center;
     justify-content: flex-start; /* Change from 'center' to 'flex-start' */
     height: 100vh;
-    padding-top: 50px; /* Increase the top padding for additional space */
+    padding-top: 5px; /* Increase the top padding for additional space */
     background-color: #f1e9d2;
-    /* background-image: url(/public/assets/images/herbie.jpg); */
+    background-image: url(/public/assets/images/herbie.jpg);
     background-repeat: no-repeat; /* Prevents the image from tiling */
     background-size: 98%; /* Ensures the image covers the entire container */
     background-position: center; /* Centers the background image */
@@ -20,7 +20,11 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 175px;
+     border: solid;
+    border-radius: 15px;
+    padding: 12px;
+    background-color: antiquewhite;
 }
 
 /* Additional style to maintain spacing between login elements */
