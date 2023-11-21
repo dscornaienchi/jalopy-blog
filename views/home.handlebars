@@ -8,7 +8,7 @@
 </head>
 
 <!-- Search Section -->
-<div class="container">
+<div class="home-container">
     <form id="searchForm">
         <label for="year">Year:</label>
         <input type="text" id="year" name="year">
@@ -24,12 +24,13 @@
 </div>
 
 <!-- Display Search Results -->
-<div class="container" id="searchResults">
+<div class="home-container-search" id="searchResults">
     {{#if cars.length}}
         {{#each cars}}
             <div class="car-card">
-                <h2><a href="/reviews/{{id}}">{{year}} {{make}} {{model}}</a></h2>
-                <!-- Add other car details as needed -->
+                <div class="car-card-container">
+                    <h2><a href="/reviews/{{id}}">{{year}} {{make}}</a></h2>
+                </div>
             </div>
         {{/each}}
     {{else}}
