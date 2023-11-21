@@ -1,5 +1,5 @@
 <!-- Search Section -->
-<div class="home-container">
+<div class="container">
     <form id="searchForm">
         <label for="year">Year:</label>
         <input type="text" id="year" name="year">
@@ -19,9 +19,8 @@
     {{#if cars.length}}
         {{#each cars}}
             <div class="car-card">
-                <div class="car-card-container">
-                    <h2><a href="/reviews/{{id}}">{{year}} {{make}} {{model}}</a></h2>
-                </div>
+                <h2><a href="/reviews/{{id}}">{{year}} {{make}} {{model}}</a></h2>
+                <!-- Add other car details as needed -->
             </div>
         {{/each}}
     {{else}}
