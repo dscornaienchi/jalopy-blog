@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Reload the page or update the reviews dynamically
                 window.location.reload();
             } else {
-                console.error(chalk.red('Failed to submit review'));
+                console.error('Failed to submit review');
             }
         } catch (error) {
-            console.error(chalk.blue('Error submitting review:', error));
+            console.error('Error submitting review:', error);
         }
     });
 });
