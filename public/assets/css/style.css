@@ -1,11 +1,10 @@
-/* body,
+body,
 h1,
 p {
     margin: 0;
     padding: 0;
     background-color: #D9D9D9;
-} */
-
+}
 
 header {
     background-color: azure;
@@ -14,13 +13,13 @@ header {
     display: flex; 
     justify-content: space-between;
     align-items: center;
-    /* align-items: center; */
 }
 
 h2,
 h3 {
     align-content: center;
     text-align: center;
+    font-size: x-large;
 }
 
 header .website-title {
@@ -30,9 +29,6 @@ header .website-title {
     font-size: 45px;
     font-weight: bold;
     font-family: 'Sniglet', garamond, sans-serif;
-    /* margin-right: auto;
-    padding-left: 20px; */
-    /* Adjust as needed */
 } 
 
 .nav-bar {
@@ -41,8 +37,6 @@ header .website-title {
     font-size: 18px;
     font-family: 'Montserrat', garamond, sans-serif;
     align-items: center;
-    /* display: flex; */
-    /* flex-direction: row; */
 }
 
 #list {
@@ -62,112 +56,54 @@ header .website-title {
     color: #000; 
 }
 
-
-/* header nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: auto;
-} */
-
-/* header nav ul li {
-    margin-right: 20px;
-} */
-
-/* header nav ul li:first-child {
-    margin-right: auto;
-} */
-
-/* header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-} */
-
 .container { 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center content vertically */
+    justify-content: center;
     height: 100vh;
     padding-top: 20px;
-    /* Space from the top */
     background-color: #f1e9d2;
 }
 
-
-/* Additional styles for form and links */
-/* #signup-form {
-=======
-    background-image: url('/public/assets/images/herbie.jpg');
-    /* Set background properties */
-/*     background-size: cover;
-    background-position: fill; */
-    /* Position the background image */
-
-
 .container img {
-    width: 50%; /* Make the image width 100% of the container */
-    height: 50%; /* Make the image height 100% of the container */
-    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+    width: 50%; 
+    height: 50%; 
+    object-fit: cover; 
 }
 
 #login-form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center form items horizontally */
-    margin-top: 20px; /* Add margin between the form and the "Login" title */
+    align-items: center; 
+    margin-top: 20px; 
 }
 
 #login-form .form-group {
-    margin-bottom: 20px; /* Increase margin between input boxes */
+    margin-bottom: 20px; 
 }
 
 #login-form button {
-    margin-top: 20px; /* Add margin between the button and input boxes */
+    margin-top: 20px; 
 }
 
-/* Adjust the alignment of the form elements */
 #signup-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* Align form items to the top */
-    /* margin-top: 20px;
-} */
-
-/* #signup-form .form-group {
-    margin-bottom: 10px;
-} */
-
-/* #signup-form button {
-    align-self: flex-start;
-    /* Align button to the left */
-/* } */ 
-
-/* #signup-form label,
-#signup-form input {
-    width: 200px;
-    /* Adjust as needed */
-/* } */
-    margin-top: 10px; /* Add a margin for separation */
+    margin-top: 10px; 
 }
 
-/* Ensure images and other elements in review-container align to the top */
 .review-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Center content horizontally */
     justify-content: flex-start;
-    /* Align content to the top */
     padding-top: 20px;
-    /* Space from the top */
 }
 
-/* Add max-width to the image to prevent overflow */
 .review-img {
-    max-width: 100%; /* Adjust as needed */
+    max-width: 100%; 
     height: auto;
 }
 
@@ -175,7 +111,6 @@ header .website-title {
     width: 400px;
     height: auto;
 }
-
 
 /* home page */
 .home-container {
