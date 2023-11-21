@@ -18,27 +18,11 @@ A screenshot of the application is shown here:
 
 Tutorials and instruction provided by the University of Texas at Austin Full Stack Web Developement Program and it's affiliated professors and TA's.  -->
 
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
 
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
 
 
 
@@ -63,9 +47,6 @@ Tutorials and instruction provided by the University of Texas at Austin Full Sta
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -83,9 +64,14 @@ Tutorials and instruction provided by the University of Texas at Austin Full Sta
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![jalopy-blog-screenshot](public/assets/images/jolapy-blog-screenshot.png)
 
-A blog for Automobile owners to express their opinions about the car of their choice. the years range from 2000-2023. This program has the most popular makes and models from the year range mentioned above.
+Desription - A blog for Automobile owners to express their opinions about the car of their choice. The years range from 2000 to 2023. This program has the most popular makes and models from the year range mentioned above.
+
+Motivation for development - Users today are left to either skim reddit threads or read professional reviews. This website allows common people to find each other’s reviews
+
+User story - As a user, I want to search for a car, find reviews, and be able to a leave a review for a selected car
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -131,12 +117,8 @@ A blog for Automobile owners to express their opinions about the car of their ch
 The Github repository can be found here: https://github.com/dscornaienchi/jalopy-blog
 
 The deployed application can be found here:
+https://protected-eyrie-21632-651b6d652295.herokuapp.com/ 
 
-A screenshot of the application is shown here: 
-
-![Screenshot of the application](PENDING)
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -147,7 +129,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+Tutorials and instruction provided by the University of Texas at Austin Full Stack Web Developement Program and it's affiliated professors and TA's.  
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
