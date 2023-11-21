@@ -19,7 +19,7 @@ router.post('/create', async (req, res) => {
 
     res.redirect('/dashboard');
   } catch (err) {
-    console.error(err);
+    console.error(chalk.blue(err));
     res.status(500).json(err);
   }
 });

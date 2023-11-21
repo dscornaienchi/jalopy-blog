@@ -6,14 +6,14 @@ router.get('/', async (req, res) => {
     try {
         res.render('home');
     } catch (err) {
-        console.log(err);
+        console.log(chalk.blue(err));
         res.status(500).json(err);
     }
 });
 
 // homepage displays the car results after the user makes a selection based on year, make, and model
 router.get('/search', async (req, res) => {
-    console.log("REQ", req.query);
+    console.log(chalk.green("REQ", req.query));
     try {
         const carData = await Car.findAll({
             where: {
@@ -23,10 +23,10 @@ router.get('/search', async (req, res) => {
             },
         });
         const cars = carData.map((car) => car.get({ plain: true }));
-        console.log("CARS", cars);
+        console.log(chalk.blue("CARS", cars));
         res.json(cars);
     } catch (err) {
-        console.log(err);
+        console.log(chalk.blue(err));
         res.status(500).json(err);
     }
 });
