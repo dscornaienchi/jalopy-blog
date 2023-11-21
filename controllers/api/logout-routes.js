@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt'); // Import the bcrypt library
 router.get('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      console.log(chalk.green('User logged out'));
+      console.log('User logged out');
       res.redirect('/');
     });
   } else {

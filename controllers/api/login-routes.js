@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
       return res.redirect('/'); // Redirect to the home page
     });
   } catch (err) {
-    console.log(chalk.blue(err));
+    console.log(err);
     res.status(500).json(err);
   }
 });

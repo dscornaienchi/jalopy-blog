@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 const data = await response.json();
-                console.log(chalk.blue(data));
+                console.log(data);
                 updateSearchResults(data);
             } else {
-                console.error(chalk.green('Failed to fetch search results'));
+                console.error('Failed to fetch search results');
             }
         } catch (error) {
-            console.error(chalk.blue('Error fetching search results:', error));
+            console.error('Error fetching search results:', error);
         }
     });
 

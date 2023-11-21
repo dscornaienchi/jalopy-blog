@@ -26,7 +26,7 @@ router.post('/signup', async (req, res) => {
       return res.redirect('/'); // Redirect to the homepage or any other desired page
     });
   } catch (err) {
-    console.log(chalk.red(err));
+    console.log(err);
     res.status(500).json(err);
   }
 });
