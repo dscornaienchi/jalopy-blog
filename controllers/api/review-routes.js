@@ -30,7 +30,7 @@ router.get('/reviews/:id', async (req, res) => {
     console.log(review);
     res.render('review', { review, loggedIn: req.session.loggedIn });
   } catch (err) {
-    console.log(err);
+    console.log(chalk.red(err));
     res.status(500).json(err);
   }
 });
@@ -72,7 +72,7 @@ router.post('/reviews', async (req, res) => {
 
       res.status(200).json(newReview);
   } catch (error) {
-      console.error('Error creating review:', error);
+      console.error(chalk.red('Error creating review:', error));
       res.status(500).json({ error: 'Failed to create review' });
   }
 });

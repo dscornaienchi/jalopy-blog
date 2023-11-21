@@ -24,11 +24,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const reviews = postReview.map((review) => review.get({ plain: true }));
 
     // Render the dashboard, passing the user's posts
-    console.log(reviews);
-    console.log(req.session.user_id);
+    console.log(chalk.red(reviews));
+    console.log(chalk.blue(req.session.user_id));
     res.render('dashboard', { reviews, user: req.session.user_id });
   } catch (err) {
-    console.log(err);
+    console.log(chalk.blue(err));
     res.status(500).json(err);
   }
 });
