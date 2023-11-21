@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
             carCard.classList.add('car-card');
             
 
-            const carImg = document.createElement('IMG');
-            carImg.classList.add('car-img');
-            carImg.src = `${car.image_url}`;
-            carCard.appendChild(carImg);
+            // const carImg = document.createElement('IMG');
+            // carImg.classList.add('car-img');
+            // carImg.src = `${car.image_url}`;
+            // carCard.appendChild(carImg);
 
             // Make the car name a clickable link
             const carLink = document.createElement('a');
