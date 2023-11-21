@@ -18,13 +18,21 @@ app.use('/public', express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(
-  session({
-    secret: '765b25eb31a753341f6eeb7db282c364a2645d5ea434320e610b212789fbe81c2cda0981fc11452a2ea31b76097ed9869a7f70564e65414d51be396c873284f4',
-    resave: false,
-    saveUninitialized: true,
+const sess = {
+  secret: '765b25eb31a753341f6eeb7db282c364a2645d5ea434320e610b212789fbe81c2cda0981fc11452a2ea31b76097ed9869a7f70564e65414d51be396c873284f4',
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
   })
-);
+};
+app.use(session(sess));
 
 // Use the routes
 app.use(require('./controllers/home-routes'));
