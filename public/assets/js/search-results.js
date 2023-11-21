@@ -35,10 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
         cars.forEach((car) => {
             const carCard = document.createElement('div');
             carCard.classList.add('car-card');
-            carCard.innerHTML = `<h2>${car.year} ${car.make} ${car.model}</h2>`;
+
+            // Make the car name a clickable link
+            const carLink = document.createElement('a');
+            carLink.href = `/reviews/${car.id}`; // Assuming you have an 'id' property for each car
+            carLink.textContent = `${car.year} ${car.make} ${car.model}`;
+            carCard.appendChild(carLink);
+
             // Add other car details as needed
             searchResultsContainer.appendChild(carCard);
         });
     }
 });
+
 
