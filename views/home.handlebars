@@ -24,12 +24,12 @@
 </div>
 
 <!-- Display Search Results -->
-<div class="home-container-search" id="searchResults">
+<div class="container" id="searchResults">
     {{#if cars.length}}
         {{#each cars}}
             <div class="car-card">
                 <div class="car-card-container">
-                    <h2><a href="/reviews/{{id}}">{{year}} {{make}}</a></h2>
+                    <h2><a href="/reviews/{{id}}">{{year}} {{make}} {{model}}</a></h2>
                 </div>
             </div>
         {{/each}}
