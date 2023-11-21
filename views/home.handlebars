@@ -19,7 +19,7 @@
     {{#if cars.length}}
         {{#each cars}}
             <div class="car-card">
-                <h2>{{year}} {{make}} {{model}}</h2>
+                <h2><a href="/reviews/{{id}}">{{year}} {{make}} {{model}}</a></h2>
                 <!-- Add other car details as needed -->
             </div>
         {{/each}}
@@ -27,6 +27,7 @@
         <p>No search results found.</p>
     {{/if}}
 </div>
+
 
 
 <!-- Include the JavaScript file -->
